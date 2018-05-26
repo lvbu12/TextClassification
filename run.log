@@ -1,0 +1,153 @@
+{'娱乐': 12, '社会': 3, '彩票': 13, '游戏': 11, '房产': 8, '家居': 6, '时尚': 10, '股票': 9, '教育': 2, '科技': 4, '财经': 5, '体育': 7, '时政': 0, '星座': 1}
+size of char2idx ->  1912162
+{'体育': 0.15715650450192256, '社会': 0.060722218241742495, '彩票': 0.009061164051491486, '游戏': 0.029104869718898523, '房产': 0.02394258556041174, '家居': 0.04050536170619283, '时尚': 0.015964510042750353, '股票': 0.18437462683002556, '教育': 0.050080007642521074, '科技': 0.19456186859640323, '财经': 0.04430154522223018, '星座': 0.004272646939409138, '时政': 0.07533495736906212, '娱乐': 0.1106171335769387}
+Process 0th file of 时政
+Process 10000th file of 时政
+Process 20000th file of 时政
+Process 30000th file of 时政
+Process 40000th file of 时政
+Process 50000th file of 时政
+Process 60000th file of 时政
+Process 0th file of 星座
+Process 0th file of 教育
+Process 10000th file of 教育
+Process 20000th file of 教育
+Process 30000th file of 教育
+Process 40000th file of 教育
+Process 0th file of 社会
+Process 10000th file of 社会
+Process 20000th file of 社会
+Process 30000th file of 社会
+Process 40000th file of 社会
+Process 50000th file of 社会
+Process 0th file of 科技
+Process 10000th file of 科技
+Process 20000th file of 科技
+Process 30000th file of 科技
+Process 40000th file of 科技
+Process 50000th file of 科技
+Process 60000th file of 科技
+Process 70000th file of 科技
+Process 80000th file of 科技
+Process 90000th file of 科技
+Process 100000th file of 科技
+Process 110000th file of 科技
+Process 120000th file of 科技
+Process 130000th file of 科技
+Process 140000th file of 科技
+Process 150000th file of 科技
+Process 160000th file of 科技
+Process 0th file of 财经
+Process 10000th file of 财经
+Process 20000th file of 财经
+Process 30000th file of 财经
+Process 0th file of 家居
+Process 10000th file of 家居
+Process 20000th file of 家居
+Process 30000th file of 家居
+Process 0th file of 体育
+Process 10000th file of 体育
+Process 20000th file of 体育
+Process 30000th file of 体育
+Process 40000th file of 体育
+Process 50000th file of 体育
+Process 60000th file of 体育
+Process 70000th file of 体育
+Process 80000th file of 体育
+Process 90000th file of 体育
+Process 100000th file of 体育
+Process 110000th file of 体育
+Process 120000th file of 体育
+Process 130000th file of 体育
+Process 0th file of 房产
+Process 10000th file of 房产
+Process 20000th file of 房产
+Process 0th file of 股票
+Process 10000th file of 股票
+Process 20000th file of 股票
+Process 30000th file of 股票
+Process 40000th file of 股票
+Process 50000th file of 股票
+Process 60000th file of 股票
+Process 70000th file of 股票
+Process 80000th file of 股票
+Process 90000th file of 股票
+Process 100000th file of 股票
+Process 110000th file of 股票
+Process 120000th file of 股票
+Process 130000th file of 股票
+Process 140000th file of 股票
+Process 150000th file of 股票
+Process 0th file of 时尚
+Process 10000th file of 时尚
+Process 0th file of 游戏
+Process 10000th file of 游戏
+Process 20000th file of 游戏
+Process 0th file of 娱乐
+Process 10000th file of 娱乐
+Process 20000th file of 娱乐
+Process 30000th file of 娱乐
+Process 40000th file of 娱乐
+Process 50000th file of 娱乐
+Process 60000th file of 娱乐
+Process 70000th file of 娱乐
+Process 80000th file of 娱乐
+Process 90000th file of 娱乐
+Process 0th file of 彩票
+bigger ->  8257.2898
+min of word cnt ->  1.0
+max of word cnt ->  134353.0
+toal word cnt of 星座 -> 3637270
+average word cnt of 星座 -> 1.902176698417812
+min of word cnt ->  1.0
+max of word cnt ->  2950487.0
+toal word cnt of 社会 -> 37000635
+average word cnt of 社会 -> 19.35015704736314
+min of word cnt ->  1.0
+max of word cnt ->  360613.0
+toal word cnt of 彩票 -> 7264980
+average word cnt of 彩票 -> 3.7993538204399
+min of word cnt ->  1.0
+max of word cnt ->  752046.0
+toal word cnt of 游戏 -> 13974814
+average word cnt of 游戏 -> 7.308383913078495
+min of word cnt ->  1.0
+max of word cnt ->  751837.0
+toal word cnt of 房产 -> 12568805
+average word cnt of 房产 -> 6.5730858577882
+min of word cnt ->  1.0
+max of word cnt ->  1036452.0
+toal word cnt of 家居 -> 16216856
+average word cnt of 家居 -> 8.480900676825499
+min of word cnt ->  1.0
+max of word cnt ->  351368.0
+toal word cnt of 时尚 -> 6864213
+average word cnt of 时尚 -> 3.5897654069059004
+min of word cnt ->  1.0
+max of word cnt ->  5055703.0
+toal word cnt of 股票 -> 75674144
+average word cnt of 股票 -> 39.575174069979425
+min of word cnt ->  1.0
+max of word cnt ->  1944130.0
+toal word cnt of 教育 -> 31658916
+average word cnt of 教育 -> 16.55660765144376
+min of word cnt ->  1.0
+max of word cnt ->  5313677.0
+toal word cnt of 科技 -> 81462605
+average word cnt of 科技 -> 42.60235534436936
+min of word cnt ->  1.0
+max of word cnt ->  1776956.0
+toal word cnt of 财经 -> 26226391
+average word cnt of 财经 -> 13.71556960132039
+min of word cnt ->  1.0
+max of word cnt ->  6139447.0
+toal word cnt of 体育 -> 82572898
+average word cnt of 体育 -> 43.18300332294021
+min of word cnt ->  1.0
+max of word cnt ->  1547862.0
+toal word cnt of 时政 -> 25479863
+average word cnt of 时政 -> 13.325159165384523
+min of word cnt ->  1.0
+max of word cnt ->  3266962.0
+toal word cnt of 娱乐 -> 47399190
+average word cnt of 娱乐 -> 24.78827107745055
