@@ -93,7 +93,7 @@ def compute_macro_F1(report_csv):
         F1_dict[key] = f1
     for key in F1_dict:
         print('F1 score of {} = {:.3f}.'.format(key, F1_dict[key]))
-    print('Micro_F1 = {:.3f}'.format(sum([F1_dict[k] for k in F1_dict]) / len(F1_dict)))
+    print('Macro_F1 = {:.3f}'.format(sum([F1_dict[k] for k in F1_dict]) / len(F1_dict)))
 
 def compute_micro_F1(report_csv):
 
@@ -118,10 +118,10 @@ def compute_micro_F1(report_csv):
     precision = TP / (TP + FP)
     recall = TP / (TP + FN)
     f1 = 2 * precision * recall / (precision + recall)
-    print('Macro_F1 = {:.3f}'.format(f1))
+    print('Micro_F1 = {:.3f}'.format(f1))
 
 if __name__ == "__main__":
 
     #gen_csv_report(sys.argv[1], sys.argv[2], sys.argv[3])
     compute_micro_F1(sys.argv[1])
-    compute_macro_F1(sys.argv[1])
+    #compute_macro_F1(sys.argv[1])
