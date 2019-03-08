@@ -1,0 +1,20 @@
+{
+  "batch_size": 32,
+  "best_acc": 0.94,
+  "chars_path": "corpus/chars.lst",
+  "chars_size": 7555,
+  "cur_lr": 0.0001,
+  "epochs": 30,
+  "hidden_size": 512,
+  "labels_path": "corpus/labels.lst",
+  "load_model_path": "Models",
+  "lr": 0.01,
+  "output_size": 14,
+  "pred_path": "data/pred.txt",
+  "print_every": 10,
+  "save_model_path": "Models",
+  "test_path": "data/test.txt",
+  "train_path": "data/train.txt",
+  "valid_every": 100,
+  "valid_path": "data/valid.txt"
+}
