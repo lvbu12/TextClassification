@@ -13,8 +13,8 @@
   "pred_path": "data/pred.txt",
   "print_every": 10,
   "save_model_path": "Models",
-  "test_path": "data/test.txt",
-  "train_path": "data/train.txt",
+  "test_path": "data/test_demo.txt",
+  "train_path": "data/train_demo.txt",
   "valid_every": 100,
-  "valid_path": "data/valid.txt"
+  "valid_path": "data/valid_demo.txt"
 }

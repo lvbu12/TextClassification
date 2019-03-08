@@ -50,7 +50,7 @@ def gen_csv_report(test_file, pred_file, report_file=None):
             f.write('\n')
 
 
-def compute_macro_F1(report_csv):
+def get_confusion_matrix(report_csv):
 
     confusion_matrix = collections.OrderedDict()
 
@@ -63,13 +63,21 @@ def compute_macro_F1(report_csv):
             for i, label in enumerate(labels):
                 confusion_matrix[lin_seg[0]][label] = int(lin_seg[i+1])
 
+    return confusion_matrix
+
+
+def compute_macro_F1(report_csv):
+
+    confusion_matrix = get_confusion_matrix(report_csv)
+
     F1_dict = collections.OrderedDict()
     for key in confusion_matrix:
         TP = confusion_matrix[key][key]
         FNs = [p[1] for p in confusion_matrix[key].items()]
-        FN = sum(FNs[1:])
+        FN = sum(FNs) - TP
         FPs = [confusion_matrix[p][key] for p in confusion_matrix]
-        FP = sum(FPs[1:])
+        FP = sum(FPs) - TP
+        print(key, TP, FN, FP)
         try:
             precision = TP / (TP + FP)
         except:
@@ -87,8 +95,33 @@ def compute_macro_F1(report_csv):
         print('F1 score of {} = {:.3f}.'.format(key, F1_dict[key]))
     print('Micro_F1 = {:.3f}'.format(sum([F1_dict[k] for k in F1_dict]) / len(F1_dict)))
 
+def compute_micro_F1(report_csv):
+
+    confusion_matrix = get_confusion_matrix(report_csv)
+
+    TP_dict = collections.OrderedDict()
+    FN_dict = collections.OrderedDict()
+    FP_dict = collections.OrderedDict()
+    for key in confusion_matrix:
+        TP = confusion_matrix[key][key]
+        TP_dict[key] = TP
+        FNs = [p[1] for p in confusion_matrix[key].items()]
+        FN = sum(FNs) - TP
+        FN_dict[key] = FN
+        FPs = [confusion_matrix[p][key] for p in confusion_matrix]
+        FP = sum(FPs) - TP
+        FP_dict[key] = FP
+        print(key, TP, FN, FP)
+    TP = sum([TP_dict[k] for k in TP_dict])
+    FN = sum([FN_dict[k] for k in FN_dict])
+    FP = sum([FP_dict[k] for k in FP_dict])
+    precision = TP / (TP + FP)
+    recall = TP / (TP + FN)
+    f1 = 2 * precision * recall / (precision + recall)
+    print('Macro_F1 = {:.3f}'.format(f1))
 
 if __name__ == "__main__":
 
     #gen_csv_report(sys.argv[1], sys.argv[2], sys.argv[3])
+    compute_micro_F1(sys.argv[1])
     compute_macro_F1(sys.argv[1])

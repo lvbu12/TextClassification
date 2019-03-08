@@ -36,7 +36,7 @@ show_model_size(net)
 
 try:
     model_path = os.path.abspath(config.load_model_path)
-    net.load_state_dict(torch.load(os.path.join(model_path, '%s_%.8f_lr_%d_hidsize.pt' % (net.name, config.lr, config.hidden_size))))
+    net.load_state_dict(torch.load(os.path.join(model_path, '%s_%.8f_lr_%d_hidsize_cpu.pt' % (net.name, config.lr, config.hidden_size))))
     print('load pre-train model succeed.')
 except Exception as e:
     print(e)
