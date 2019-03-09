@@ -16,7 +16,9 @@ import time
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-config = Config.from_json_file('Configs/config.json')
+BASE_PATH = os.path[0]
+
+config = Config.from_json_file(os.path.join(BASE_PATH, 'Configs/config.json'))
 
 def train(net, words_t, label_t, loss_fn, opt):
 
@@ -41,10 +43,10 @@ def valid(net, words_t, label_t, loss_fn):
         return loss.item(), acc.item()
 
 
-char2idx, idx2char = get_chars(config.chars_path)
-label2idx, idx2label = get_labels(config.labels_path)
-train_data = TrainData(config.train_path, char2idx, label2idx)
-valid_data = ValidData(config.valid_path, char2idx, label2idx)
+char2idx, idx2char = get_chars(os.path.join(BASE_PATH, config.chars_path))
+label2idx, idx2label = get_labels(os.path.join(BASE_PATH, config.labels_path))
+train_data = TrainData(os.path.join(BASE_PATH, config.train_path), char2idx, label2idx)
+valid_data = ValidData(os.path.join(BASE_PATH, config.valid_path), char2idx, label2idx)
 train_loader = DataLoader(train_data, batch_size=config.batch_size, shuffle=True, collate_fn=collate_fn)
 valid_loader = DataLoader(valid_data, batch_size=config.batch_size, shuffle=False, collate_fn=collate_fn)
 
@@ -53,7 +55,7 @@ print(net)
 show_model_size(net)
 
 try:
-    model_path = os.path.abspath(config.load_model_path)
+    model_path = os.path.join(BASE_PATH, config.load_model_path))
     net.load_state_dict(torch.load(os.path.join(model_path, '%s_%.8f_lr_%d_hidsize.pt' % (net.name, config.lr, config.hidden_size))))
     opt = optim.Adam(net.parameters(), lr=config.cur_lr)
     print('load pre-train model succeed.')
