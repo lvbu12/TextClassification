@@ -4,6 +4,7 @@ import sys
 from utils import get_labels
 import collections
 
+BASE_PATH = sys.path[0]
 
 def gen_txt_report(test_file, pred_file, report_file=None):
 
@@ -22,7 +23,7 @@ def gen_txt_report(test_file, pred_file, report_file=None):
 
 def gen_csv_report(test_file, pred_file, report_file=None):
 
-    label2idx, idx2char = get_labels('corpus/labels.lst')
+    label2idx, idx2char = get_labels(os.path.join(BASE_PATH, 'corpus/labels.lst'))
     
     csv_dict = collections.OrderedDict()
     for key1 in label2idx:
