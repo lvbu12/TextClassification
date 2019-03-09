@@ -12,7 +12,8 @@ import sys
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-config = Config.from_json_file('Configs/config.json')
+BASE_PATH = sys.path[0]
+config = Config.from_json_file(os.path.join(BASE_PATH, 'Configs/config.json'))
 
 
 def test(net, words_t):
@@ -25,9 +26,10 @@ def test(net, words_t):
         return pred
 
 
-char2idx, idx2char = get_chars(config.chars_path)
-label2idx, idx2label = get_labels(config.labels_path)
-test_data = TestData(config.test_path, char2idx)
+char2idx, idx2char = get_chars(os.path.join(BASE_PATH, config.chars_path))
+label2idx, idx2label = get_labels(os.path.join(BASE_PATH, config.labels_path))
+
+test_data = TestData(os.path.join(BASE_PATH, config.test_path), char2idx)
 test_loader = DataLoader(test_data, batch_size=config.batch_size, shuffle=False, collate_fn=collate_fn)
 
 net = FFN(config).to(device)
@@ -35,14 +37,14 @@ print(net)
 show_model_size(net)
 
 try:
-    model_path = os.path.abspath(config.load_model_path)
+    model_path = os.path.join(BASE_PATH, config.load_model_path)
     net.load_state_dict(torch.load(os.path.join(model_path, '%s_%.8f_lr_%d_hidsize_cpu.pt' % (net.name, config.lr, config.hidden_size))))
     print('load pre-train model succeed.')
 except Exception as e:
     print(e)
     print('load pre-train model failed.')
 
-predfile_path = os.path.abspath(config.pred_path)
+predfile_path = os.path.join(BASE_PATH, config.pred_path)
 with open(predfile_path, 'w', encoding='utf-8') as f:
     for words_t in test_loader:
         words_t = words_t.to(device)
